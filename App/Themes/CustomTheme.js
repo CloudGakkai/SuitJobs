@@ -23,10 +23,10 @@ export default {
   },
   font: {
     family: {
-      "font-regular": "Inter-Regular",
-      "font-medium": "Inter-Medium",
-      "font-semibold": "Inter-SemiBold",
-      "font-bold": "Inter-Bold"
+      "regular": "Inter-Regular",
+      "medium": "Inter-Medium",
+      "semibold": "Inter-SemiBold",
+      "bold": "Inter-Bold"
     },
     size: {
       "7xl": 32,

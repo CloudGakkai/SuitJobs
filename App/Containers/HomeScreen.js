@@ -11,6 +11,7 @@ import Images from '../Images'
 
 // Components
 import RecommendSection from '../Components/Section/RecommendSection'
+import RecentlySection from '../Components/Section/RecentlySection'
 
 // Styles
 import styles from './Styles/HomeScreenStyle'
@@ -30,6 +31,8 @@ const HomeScreen = props => {
         </View>
 
         <RecommendSection />
+
+        <RecentlySection />
       </ScrollView>
     </SafeAreaView>
   )
