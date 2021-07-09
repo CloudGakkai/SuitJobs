@@ -1,5 +1,6 @@
 const Images = {
-  appLogo: require('./logo.png')
+  logoGoogle: require('./logo_google.png'),
+  logoDribbble: require('./logo_dribbble.png')
 }
 
 export default Images
