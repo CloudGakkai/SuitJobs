@@ -12,6 +12,7 @@ export default {
     "soft-red": "#FFE2EB",
     "soft-orange": "#FFEBE7",
     "neutral-light": "#EBF0FF",
+    "hyperlink": "#0097FF",
     "gray-900": "#242323"
   },
   border: {

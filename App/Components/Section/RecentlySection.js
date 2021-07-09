@@ -68,7 +68,6 @@ const RecentlySection = props => {
         numColumns={2}
         renderItem={({ item }) => <RecentlyCard data={item} backgroundType={item?.background} />}
         contentContainerStyle={apply('pl-4')}
-        // columnWrapperStyle={apply('m-4')}
       />
     </View>
   )

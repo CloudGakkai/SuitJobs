@@ -12,6 +12,7 @@ import Images from '../Images'
 // Components
 import RecommendSection from '../Components/Section/RecommendSection'
 import RecentlySection from '../Components/Section/RecentlySection'
+import FreelanceSection from '../Components/Section/FreelanceSection'
 
 // Styles
 import styles from './Styles/HomeScreenStyle'
@@ -20,7 +21,7 @@ import { apply } from '../Themes/OsmiProvider'
 const HomeScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={apply('pb-5')}>
         <View style={styles.topContainer}>
           <Text style={styles.helloLabel}>{`Let’s Find\nYour Dream Jobs`}</Text>
 
@@ -33,6 +34,8 @@ const HomeScreen = props => {
         <RecommendSection />
 
         <RecentlySection />
+
+        <FreelanceSection />
       </ScrollView>
     </SafeAreaView>
   )
