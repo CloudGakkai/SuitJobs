@@ -1,5 +1,6 @@
 const Images = {
   logoGoogle: require('./logo_google.png'),
+  logoGoogleDetail: require('./logo_google_detail.png'),
   logoDribbble: require('./logo_dribbble.png'),
   logoGojek: require('./logo_gojek.png'),
   logoShopee: require('./logo_shopee.png'),
