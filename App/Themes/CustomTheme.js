@@ -22,6 +22,9 @@ export default {
       "3xl": 14
     }
   },
+  spacing: {
+    "11": 44
+  },
   font: {
     family: {
       "regular": "Inter-Regular",
@@ -32,6 +35,19 @@ export default {
     size: {
       "7xl": 32,
       "8xl": 34
+    }
+  },
+  shadow: {
+    "top": {
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: -6,
+      },
+      shadowOpacity: 1,
+      shadowRadius: 8.30,
+
+      elevation: 13,
     }
   }
 }

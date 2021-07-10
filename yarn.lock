@@ -6083,10 +6083,10 @@ os-tmpdir@^1.0.0, os-tmpdir@~1.0.2:
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-osmicsx@^0.6.8:
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/osmicsx/-/osmicsx-0.6.8.tgz#c9862f88b86c7b373b1e1ed4cbf107df6d70f5fe"
-  integrity sha512-B2YKdW9/VfxcNUdkoIQVhxpFcMb6w3wwxoXHdekXEOtBk4YLslmig1o7eJVbxAJScZwy9pl/7VXbYqE1vFwQvQ==
+osmicsx@^0.6.9:
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/osmicsx/-/osmicsx-0.6.9.tgz#9df32809f637b32c6016334cac22ac3dfed66325"
+  integrity sha512-Ybbg3XJ0lup+WEC27C//Lqgr28nODTkwRe4FGobI29Vuk0A7tquofbMWv50bHUnfqiYieLmDfL3x0BYE2OF4Qw==
   dependencies:
     mobx "^6.3.2"
     mobx-state-tree "^5.0.2"
@@ -6540,6 +6540,11 @@ react-native-screens@^2.16.1:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.18.1.tgz#47b9991c6f762d00d0ed3233e5283d523e859885"
   integrity sha512-r5WZLpmx2hHjC1RgMdPq5YpSU9tEhBpUaZ5M1SUtNIONyiLqQVxabhRCINdebIk4depJiIl7yw2Q85zJyeX6fw==
+
+react-native-shadow@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-shadow/-/react-native-shadow-1.2.2.tgz#08991cd14b71e32f2fc6363911c139d231949a66"
+  integrity sha512-kwTmqRKmPEML9KbJi0uvvKd+67rOJQcr3IyNp9bg+qi/H+Wnwev/Mr8sUiUZlYEJ433ii2iNwpjc1ERMjHtMWw==
 
 react-native-simple-toast@^1.1.3:
   version "1.1.3"

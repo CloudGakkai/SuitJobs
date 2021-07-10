@@ -1,12 +1,13 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import { Image, View, Text } from 'react-native'
+import { TouchableOpacity, Image, View, Text } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 
 // Icons
 import FeatherIcon from 'react-native-vector-icons/Feather'
 
 // Components
-import Tag, { BadgeTypes } from '../Badge/BadgeCard'
+import Tag from '../Badge/BadgeCard'
 
 // Styles
 import styles from '../Styles/Card/RecommendationCardStyle'
@@ -19,6 +20,7 @@ export const CardTypes = Object.freeze({
 
 const RecommendationCard = props => {
   const { data, type } = props
+  const navigation = useNavigation()
 
   /**
    * Background card logic
@@ -49,7 +51,7 @@ const RecommendationCard = props => {
   }
 
   return (
-    <View style={[styles.card, _getBackgroundCard()]}>
+    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('DetailJob')} style={[styles.card, _getBackgroundCard()]}>
       <View style={apply('full row')}>
         <View style={apply('mr-4')}>
           <Image source={data?.logo} style={styles.cardLogo} />
@@ -73,7 +75,7 @@ const RecommendationCard = props => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
