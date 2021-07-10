@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { ScrollView, FlatList, Image, View, Text } from 'react-native'
+import { ScrollView, View, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 // Icons
 import { IconSearch } from '../Images/Icons'
-
-// Images
-import Images from '../Images'
 
 // Components
 import RecommendSection from '../Components/Section/RecommendSection'
