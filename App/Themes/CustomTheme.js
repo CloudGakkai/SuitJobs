@@ -33,5 +33,18 @@ export default {
       "7xl": 32,
       "8xl": 34
     }
+  },
+  shadow: {
+    "top": {
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: -6,
+      },
+      shadowOpacity: 1,
+      shadowRadius: 8.30,
+
+      elevation: 13,
+    }
   }
 }

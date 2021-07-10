@@ -8,5 +8,7 @@ export default connect({
   salary: 'text-lg font-regular, text-gray-900',
   section: 'mb-4 px-4',
   titleSection: 'text-base font-semibold text-gray-900 mb-1',
-  contentSection: 'text-sm font-regular text-silver-300'
+  contentSection: 'text-sm font-regular text-silver-300',
+  footer: 'absolute bottom-0 pt-2 z-20 w/100',
+  innerFooter: 'bg-white z-20 w/100 p-4'
 })

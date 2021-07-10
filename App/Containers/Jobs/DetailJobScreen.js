@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { ScrollView, Image, View, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { BoxShadow } from 'react-native-shadow'
 
 // Images
 import Images from '../../Images'
 
 // Components
 import Badge from '../../Components/Badge/BadgeDetail'
+import Button from '../../Components/Button/index'
 
 // Styles
 import styles from '../Styles/Jobs/DetailJobScreenStyle'
@@ -35,6 +37,18 @@ const DetailJobScreen = props => {
     title: 'Mobil Development'
   }])
 
+  const shadowOpt = {
+    ...apply('w/100'),
+    height: 80,
+    color: "#000",
+    border: 5,
+    radius: 10,
+    opacity: 0.08,
+    x: 0,
+    y: -3,
+    style: { }
+}
+
   /**
    * Render tags logic
    * @returns {array}
@@ -47,7 +61,7 @@ const DetailJobScreen = props => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={apply('py-10')}>
+      <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={apply('py-10 pb-20')}>
         <View style={apply('full items-center mb-6')}>
           <Image source={Images.logoGoogleDetail} style={styles.logo} />
 
@@ -94,6 +108,14 @@ const DetailJobScreen = props => {
           </ScrollView>
         </View>
       </ScrollView>
+
+      <View style={styles.footer}>
+        <BoxShadow setting={shadowOpt}>
+          <View style={styles.innerFooter}>
+            <Button title='Apply' buttonStyle={apply('full')} />
+          </View>
+        </BoxShadow>
+      </View>
     </SafeAreaView>
   )
 }
