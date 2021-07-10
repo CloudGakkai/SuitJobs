@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
-import { Image, View, Text } from 'react-native'
+import { TouchableOpacity, Image, View, Text } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 
 // Styles
 import styles from '../Styles/Card/RecentlyCardStyle'
@@ -15,6 +16,7 @@ export const BackgroundTypes = Object.freeze({
 
 const RecentlyCard = props => {
   const { data, backgroundType } = props
+  const navigation = useNavigation()
 
   /**
    * Render tags
@@ -27,7 +29,7 @@ const RecentlyCard = props => {
   }
 
   return (
-    <View style={[styles.card, backgroundType]}>
+    <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('DetailJob')} style={[styles.card, backgroundType]}>
       <Image source={data?.logo?.url} style={apply(`w-${data?.logo?.width} h-${data?.logo?.height}`)} />
 
       <View style={apply('mt-4')}>
@@ -38,7 +40,7 @@ const RecentlyCard = props => {
           {_renderTags()}
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
