@@ -1,25 +1,37 @@
 export default {
   colors: {
-    primary: "#f9bc15",
-    "soft-secondary": "rgba(53, 73, 94, --osmi-opacity)"
-  },
-  spacing: {
-    "30": 120
+    "primary-50": "#F2F4FF",
+    "primary-100": "#7E8CE4",
+    "primary-400": "#2B48FB",
+    "primary-500": "#3949AD",
+    "secondary-100": "#FFBFD4",
+    "secondary-500": "#BD3362",
+    "silver-300": "#9CA5BF",
+    "soft-blue": "#E9F6FF",
+    "soft-green": "#E9FFEB",
+    "soft-red": "#FFE2EB",
+    "soft-orange": "#FFEBE7",
+    "neutral-light": "#EBF0FF",
+    "hyperlink": "#0097FF",
+    "gray-900": "#242323"
   },
   border: {
-    width: {
-      30: 120
-    },
     radius: {
-      "super-xl": 120
+      "xl": 10,
+      "2xl": 12,
+      "3xl": 14
     }
   },
   font: {
     family: {
-      "font-regular": "OpenSans-Regular"
+      "regular": "Inter-Regular",
+      "medium": "Inter-Medium",
+      "semibold": "Inter-SemiBold",
+      "bold": "Inter-Bold"
     },
     size: {
-      "xxl": 40
+      "7xl": 32,
+      "8xl": 34
     }
   }
 }
