@@ -4,6 +4,12 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 const Stack = createStackNavigator()
 
+// Components
+import ArrowBack from '../Components/Button/ArrowBack'
+
+// styles
+import styles from './NavigationStyle'
+
 // Import Screen
 import HomeScreen from '../Containers/HomeScreen'
 import DetailJobScreen from '../Containers/Jobs/DetailJobScreen'
@@ -17,7 +23,11 @@ const AppNavigation = () => {
           name='DetailJob'
           component={DetailJobScreen}
           options={{
-            title: 'Jobs for You'
+            title: 'Jobs for You',
+            headerTitleStyle: styles.headerTitleDetail,
+            headerLeft: () => <ArrowBack />,
+            headerLeftContainerStyle: styles.headerLeftContainer,
+            headerTitleContainerStyle: styles.headerTitleContainerStyle
           }}
         />
       </Stack.Navigator>

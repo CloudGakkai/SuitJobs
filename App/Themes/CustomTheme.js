@@ -22,6 +22,9 @@ export default {
       "3xl": 14
     }
   },
+  spacing: {
+    "11": 44
+  },
   font: {
     family: {
       "regular": "Inter-Regular",
