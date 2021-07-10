@@ -2,18 +2,16 @@ import React, { memo } from 'react'
 import { useNavigation } from '@react-navigation/core'
 
 // Icons
-import { IconArrowBack } from '../../Images/Icons'
+import { IconBookmarkOutline } from '../../Images/Icons'
 
 // Components
 import Base from './Base'
 
 // Styles
-import styles from '../Styles/Button/ArrowBackStyle'
+import styles from '../Styles/Button/HeaderBookmarkStyle'
 import { apply } from '../../Themes/OsmiProvider'
 
-const ArrowBack = props => {
-  const navigation = useNavigation()
-
+const HeaderBookmark = props => {
   return (
     <Base 
       onPress={() => navigation.goBack()} 
@@ -21,9 +19,9 @@ const ArrowBack = props => {
       rippleColor={apply('black --opacity-25')}
       rippleRadius={15}
     >
-      <IconArrowBack width={24} height={24} />
+      <IconBookmarkOutline width={24} height={24} />
     </Base>
   )
 }
 
-export default memo(ArrowBack)
+export default memo(HeaderBookmark)

@@ -6,6 +6,7 @@ const Stack = createStackNavigator()
 
 // Components
 import ArrowBack from '../Components/Button/ArrowBack'
+import HeaderBookmark from '../Components/Button/HeaderBookmark'
 
 // styles
 import styles from './NavigationStyle'
@@ -26,7 +27,9 @@ const AppNavigation = () => {
             title: 'Jobs for You',
             headerTitleStyle: styles.headerTitleDetail,
             headerLeft: () => <ArrowBack />,
+            headerRight: () => <HeaderBookmark />,
             headerLeftContainerStyle: styles.headerLeftContainer,
+            headerRightContainerStyle: styles.headerRightContainer,
             headerTitleContainerStyle: styles.headerTitleContainerStyle
           }}
         />
