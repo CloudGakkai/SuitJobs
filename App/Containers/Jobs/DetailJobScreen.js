@@ -16,6 +16,7 @@ import styles from '../Styles/Jobs/DetailJobScreenStyle'
 import { apply } from '../../Themes/OsmiProvider'
 
 const DetailJobScreen = props => {
+  const { navigation } = props
   const [tags] = useState([{
     id: 1,
     title: 'Fulltime'
@@ -112,7 +113,11 @@ const DetailJobScreen = props => {
       <View style={styles.footer}>
         <BoxShadow setting={shadowOpt}>
           <View style={styles.innerFooter}>
-            <Button title='Apply' buttonStyle={apply('full')} />
+            <Button 
+              title='Apply' 
+              buttonStyle={apply('full')} 
+              onPress={() => navigation.navigate('ApplyJob')}  
+            />
           </View>
         </BoxShadow>
       </View>

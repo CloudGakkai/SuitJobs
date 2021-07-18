@@ -11,9 +11,12 @@ import HeaderBookmark from '../Components/Button/HeaderBookmark'
 // styles
 import styles from './NavigationStyle'
 
-// Import Screen
+// Home
 import HomeScreen from '../Containers/HomeScreen'
+
+// Jobs
 import DetailJobScreen from '../Containers/Jobs/DetailJobScreen'
+import ApplyJobScreen from '../Containers/Jobs/ApplyJobScreen'
 
 const AppNavigation = () => {
   return (
@@ -25,6 +28,19 @@ const AppNavigation = () => {
           component={DetailJobScreen}
           options={{
             title: 'Jobs for You',
+            headerTitleStyle: styles.headerTitleDetail,
+            headerLeft: () => <ArrowBack />,
+            headerRight: () => <HeaderBookmark />,
+            headerLeftContainerStyle: styles.headerLeftContainer,
+            headerRightContainerStyle: styles.headerRightContainer,
+            headerTitleContainerStyle: styles.headerTitleContainerStyle
+          }}
+        />
+        <Stack.Screen
+          name='ApplyJob'
+          component={ApplyJobScreen}
+          options={{
+            title: 'Apply Job',
             headerTitleStyle: styles.headerTitleDetail,
             headerLeft: () => <ArrowBack />,
             headerRight: () => <HeaderBookmark />,
