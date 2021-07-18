@@ -34,7 +34,6 @@ const Input = props => {
           placeholderTextColor={apply('silver-300')}
           style={[styles.input, inputStyle]}
           value={value}
-          error={error}
           onChangeText={(text) => setInputValue(text)}
         />
       </View>

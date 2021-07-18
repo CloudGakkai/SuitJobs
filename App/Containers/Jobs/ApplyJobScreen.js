@@ -18,6 +18,7 @@ import Images from '../../Images'
 // Components
 import InputCV from '../../Components/Form/InputCV'
 import Input from '../../Components/Form/Input'
+import TextArea from '../../Components/Form/TextArea'
 
 // Styles
 import styles from '../Styles/Jobs/ApplyJobScreenStyle'
@@ -28,6 +29,7 @@ const Schema = Yup.object().shape({
     .required('Resume cannot be empty'),
   phone: Yup.string()
     .required('Phone number cannot be empty'),
+  cover: Yup.string()
 })
 
 const ApplyJobScreen = props => {
@@ -62,6 +64,16 @@ const ApplyJobScreen = props => {
             keyboardType='phone-pad'
           />
         </View>
+
+        <View style={styles.inputWrapper}>
+          <TextArea
+            name='cover'
+            value={values.cover}
+            error={errors.cover}
+            placeholder='Application Letter'
+            setFieldValue={setValue}
+          />
+        </View>
       </KeyboardAvoidingView>
     )
   }
@@ -84,7 +96,11 @@ const ApplyJobScreen = props => {
           onSubmit={_handleSubmit}
           validationSchema={Schema}
           validateOnChange={false}
-          initialValues={{ cv: null, phone: '' }}
+          initialValues={{
+            cv: null,
+            phone: '',
+            cover: ''
+          }}
         >
           {formProps => _renderForm(formProps)}
         </Formik>
