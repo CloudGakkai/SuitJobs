@@ -17,6 +17,7 @@ import Images from '../../Images'
 
 // Components
 import InputCV from '../../Components/Form/InputCV'
+import Input from '../../Components/Form/Input'
 
 // Styles
 import styles from '../Styles/Jobs/ApplyJobScreenStyle'
@@ -48,6 +49,17 @@ const ApplyJobScreen = props => {
             value={values.cv}
             error={errors.cv}
             setFieldValue={setValue}
+          />
+        </View>
+
+        <View style={styles.inputWrapper}>
+          <Input
+            name='phone'
+            value={values.phone}
+            error={errors.phone}
+            placeholder='8123213148'
+            setFieldValue={setValue}
+            keyboardType='phone-pad'
           />
         </View>
       </KeyboardAvoidingView>

@@ -6,6 +6,7 @@ export default {
     "primary-500": "#3949AD",
     "secondary-100": "#FFBFD4",
     "secondary-500": "#BD3362",
+    "silver-100": "#F4F4F4",
     "silver-300": "#9CA5BF",
     "soft-blue": "#E9F6FF",
     "soft-green": "#E9FFEB",
@@ -13,6 +14,7 @@ export default {
     "soft-orange": "#FFEBE7",
     "neutral-light": "#EBF0FF",
     "hyperlink": "#0097FF",
+    "gray-800": "#222222",
     "gray-900": "#242323"
   },
   border: {
