@@ -48,7 +48,7 @@ const DetailJobScreen = props => {
     x: 0,
     y: -3,
     style: { }
-}
+  }
 
   /**
    * Render tags logic

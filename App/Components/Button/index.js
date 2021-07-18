@@ -10,10 +10,17 @@ import styles from '../Styles/Button/indexStyle'
 import { apply } from '../../Themes/OsmiProvider'
 
 const index = props => {
-  const { buttonStyle, titleStyle, title } = props
+  const { buttonStyle, titleStyle, disabled, title } = props
 
   return (
-    <Base {...props} style={[styles.container, buttonStyle]}>
+    <Base 
+      {...props} 
+      style={[
+        styles.container,
+        buttonStyle,
+        disabled && apply('bg-silver-300')
+      ]}
+    >
       {title ? (
         <Text style={[styles.title, titleStyle]}>{title}</Text>
       ) : props?.children}
