@@ -9,7 +9,7 @@ import { StaticDataTypes } from '../Redux/StaticDataRedux'
 
 /* ------------- Sagas ------------- */
 import { startup } from './StartupSagas'
-import { getRoot } from './StaticDataSagas'
+import { getStaticData } from './StaticDataSagas'
 
 /* ------------- API ------------- */
 // The API we use is only used from Sagas, so we create it here and pass along
@@ -22,6 +22,7 @@ export default function * root () {
     // some sagas only receive an action
     takeLatest(StartupTypes.STARTUP, startup),
 
-    takeLatest(StaticDataTypes.GET_ROOT_REQUEST, getRoot, api)
+    // Static Data
+    takeLatest(StaticDataTypes.GET_STATIC_DATA_REQUEST, getStaticData, api),
   ])
 }

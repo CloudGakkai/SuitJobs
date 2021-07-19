@@ -7,12 +7,6 @@ const headers = {
 }
 
 const create = (baseURL = 'https://api.github.com/') => {
-  // ------
-  // STEP 1
-  // ------
-  //
-  // Create and configure an apisauce-based api object.
-  //
   const api = apisauce.create({
     // base URL is read from the "constructor"
     baseURL,

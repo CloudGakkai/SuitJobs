@@ -8,5 +8,6 @@ export default connect({
   inputWrapper: 'mb-2',
   resumeTitleSection: 'text-lg font-semibold text-gray-900',
   footer: 'absolute bottom-0 pt-2 z-20 w/100',
-  innerFooter: 'bg-white w/100 p-4'
+  innerFooter: 'bg-white w/100 p-4',
+  bottomSheetContainer: 'flex bg-white rounded-3xl pt-5'
 })
