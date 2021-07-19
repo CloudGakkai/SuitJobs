@@ -9,5 +9,7 @@ export default connect({
   resumeTitleSection: 'text-lg font-semibold text-gray-900',
   footer: 'absolute bottom-0 pt-2 z-20 w/100',
   innerFooter: 'bg-white w/100 p-4',
-  bottomSheetContainer: 'flex bg-white rounded-3xl pt-5'
+  bottomSheetContainer: 'flex full bg-white z-30 rounded-3xl pt-5',
+  countryItem: 'border-b border-gray-800 border-opacity-20 pb-3 mb-3',
+  countryItemLabel: 'text-sm text-regular text-gray-900'
 })

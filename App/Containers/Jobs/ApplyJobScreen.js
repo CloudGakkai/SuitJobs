@@ -1,9 +1,11 @@
-import React, { useRef, useMemo, useEffect, useCallback } from 'react'
+import React, { useRef, useState, useMemo, useEffect, useCallback } from 'react'
 import { connect } from 'react-redux'
 import StaticDataActions from '../../Redux/StaticDataRedux'
 import { 
   KeyboardAvoidingView, 
   ScrollView, 
+  Pressable,
+  FlatList,
   Platform,
   Image,
   View,
@@ -21,6 +23,7 @@ import Images from '../../Images'
 // Components
 import InputCV from '../../Components/Form/InputCV'
 import Input from '../../Components/Form/Input'
+import InputSearch from '../../Components/Form/InputSearch'
 import Button from '../../Components/Button/index'
 import TextArea from '../../Components/Form/TextArea'
 
@@ -31,16 +34,19 @@ import { apply } from '../../Themes/OsmiProvider'
 const Schema = Yup.object().shape({
   cv: Yup.object()
     .required('Resume cannot be empty'),
-  countryCode: Yup.object()
-    .required('Country code cannot be empty'),
   phone: Yup.string()
     .required('Phone number cannot be empty'),
   cover: Yup.string()
 })
 
 const ApplyJobScreen = props => {
-  const {  } = props
+  const { staticData } = props
   const bottomSheetRef = useRef(null)
+  const [keyword, setKeyword] = useState('')
+  const [countryCode, setCountryCode] = useState({
+    "code": "+62",
+    "name": "Indonesia"
+  })
   const shadowOpt = useMemo(() => ({
     ...apply('w/100'),
     height: 80,
@@ -53,6 +59,11 @@ const ApplyJobScreen = props => {
     style: { }
   }), [])
 
+  const listCountryCode = useMemo(() => {
+    return keyword ? staticData?.data?.countries_phone?.filter(country => (country.code + country.name).toLowerCase().includes(keyword.toLowerCase())) : 
+    staticData?.data?.countries_phone
+  }, [keyword, countryCode, staticData?.data?.countries_phone])
+
   const _showBottomSheet = useCallback(() => {
     bottomSheetRef.current?.show({
       toValue: 400,
@@ -63,18 +74,6 @@ const ApplyJobScreen = props => {
   useEffect(() => {
     props.getStaticData()
   }, [])
-
-  const _renderBottomSheet = () => (
-    <View
-      style={{
-        backgroundColor: 'white',
-        padding: 16,
-        height: 450,
-      }}
-    >
-      <Text>Swipe down to close</Text>
-    </View>
-  )
 
   const _renderForm = ({ values, setFieldValue, errors, handleSubmit }) => {
     const setValue = useCallback(setFieldValue, [])
@@ -113,7 +112,7 @@ const ApplyJobScreen = props => {
                 placeholder='8123213148'
                 setFieldValue={setValue}
                 keyboardType='phone-pad'
-                countryCode={values.countryCode}
+                countryCode={countryCode}
                 onCountryCodeChange={_showBottomSheet}
               />
             </View>
@@ -155,6 +154,8 @@ const ApplyJobScreen = props => {
     return false
   }
 
+  const _onKeywordChange = useCallback((value) => setKeyword(value), [keyword])
+
   return (
     <SafeAreaView style={styles.container}>
       <Formik
@@ -163,10 +164,6 @@ const ApplyJobScreen = props => {
         validateOnChange={false}
         initialValues={{
           cv: null,
-          countryCode: {
-            "code": "+62",
-            "name": "Indonesia"
-          },
           phone: '',
           cover: ''
         }}
@@ -174,10 +171,46 @@ const ApplyJobScreen = props => {
         {formProps => _renderForm(formProps)}
       </Formik>
 
-      <SlidingUpPanel ref={bottomSheetRef} snappingPoints={[400, 0]}>
+      <SlidingUpPanel 
+        ref={bottomSheetRef} 
+        containerStyle={apply("z-30")}
+        backdropStyle={apply("z-30")}
+        snappingPoints={[400, 0]}
+        draggableRange={{
+          top: apply("h/100").height - 50,
+          bottom: 0
+        }}
+      >
         <View style={styles.bottomSheetContainer}>
-          <Text>Here is the content inside panel</Text>
-          <Button title='Hide' onPress={() => bottomSheetRef?.current?.hide()} />
+          <View style={apply("full items-center mb-5")}>
+            <View style={apply("h-3 w-100 bg-gray-800 bg-opacity-30 rounded-full")} />
+          </View>
+
+          <View style={[styles.inputWrapper, apply("px-5 mt-2")]}>
+            <InputSearch 
+              value={keyword}
+              setFieldValue={_onKeywordChange}
+            />
+          </View>
+
+          <FlatList 
+            data={listCountryCode}
+            extraData={listCountryCode}
+            keyExtractor={(_, index) => index.toString()}
+            renderItem={({ item }) => (
+              <Pressable onPress={() => {
+                setCountryCode(item)
+                bottomSheetRef.current?.show({
+                  toValue: 0,
+                  velocity: 500
+                })
+              }} style={styles.countryItem}>
+                <Text style={styles.countryItemLabel}>({ item?.code }) {item?.name}</Text>
+              </Pressable>
+            )}
+            initialNumToRender={15}
+            contentContainerStyle={apply('px-5 pb-3')}
+          />
         </View>
       </SlidingUpPanel>
     </SafeAreaView>
@@ -185,6 +218,7 @@ const ApplyJobScreen = props => {
 }
 
 const mapStateToProps = state => ({
+  staticData: state.staticData.root
 })
 
 const mapDispatchToProps = dispatch => ({
