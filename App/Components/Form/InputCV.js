@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 import { View, Text } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 // Components
 import Button from '../Button/index'
@@ -16,6 +17,7 @@ const InputCV = props => {
     error,
     name
   } = props
+  const navigation = useNavigation()
 
   const _renderFilled = () => {
 
@@ -24,7 +26,10 @@ const InputCV = props => {
   return (
     <View style={styles.container}>
       {!value ? (
-        <Button title='Upload Resume' />
+        <Button 
+          title='Upload Resume' 
+          onPress={() => navigation.navigate('UploadResume', { onSave: setFieldValue })}
+        />
       ) : _renderFilled()}
     </View>
   )

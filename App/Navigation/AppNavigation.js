@@ -17,6 +17,7 @@ import HomeScreen from '../Containers/HomeScreen'
 // Jobs
 import DetailJobScreen from '../Containers/Jobs/DetailJobScreen'
 import ApplyJobScreen from '../Containers/Jobs/ApplyJobScreen'
+import UploadResumeScreen from '../Containers/Jobs/UploadResumeScreen'
 
 const AppNavigation = () => {
   return (
@@ -46,6 +47,17 @@ const AppNavigation = () => {
             headerRight: () => <HeaderBookmark />,
             headerLeftContainerStyle: styles.headerLeftContainer,
             headerRightContainerStyle: styles.headerRightContainer,
+            headerTitleContainerStyle: styles.headerTitleContainerStyle
+          }}
+        />
+        <Stack.Screen
+          name='UploadResume'
+          component={UploadResumeScreen}
+          options={{
+            title: 'Upload Resume',
+            headerTitleStyle: styles.headerTitleDetail,
+            headerLeft: () => <ArrowBack />,
+            headerLeftContainerStyle: styles.headerLeftContainer,
             headerTitleContainerStyle: styles.headerTitleContainerStyle
           }}
         />

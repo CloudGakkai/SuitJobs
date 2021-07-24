@@ -17,7 +17,7 @@ const TextArea = props => {
   } = props
 
   return (
-    <View style={[styles.container, inputContainerStyle]}>
+    <View style={inputContainerStyle}>
       <TextInput
         {...props}
         multiline={true}

@@ -21,9 +21,11 @@ const Input = props => {
   return (
     <>
       <View style={[styles.container, inputContainerStyle]}>
-        <Pressable style={styles.btnCountryCode} onPress={() => onCountryCodeChange()}>
-          <Text style={styles.btnCountryCodeLabel}>{countryCode?.code}</Text>
-        </Pressable>
+        {countryCode && (
+          <Pressable style={styles.btnCountryCode} onPress={() => onCountryCodeChange()}>
+            <Text style={styles.btnCountryCodeLabel}>{countryCode?.code}</Text>
+          </Pressable>
+        )}
 
         <TextInput 
           {...props}
@@ -47,8 +49,12 @@ Input.propTypes = {
   setFieldValue: PropTypes.func.isRequired,
   error: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  countryCode: PropTypes.object.isRequired,
-  onCountryCodeChange: PropTypes.func.isRequired,
+  countryCode: PropTypes.object,
+  onCountryCodeChange: PropTypes.func,
+}
+
+Input.defaultProps = {
+  countryCode: null
 }
 
 export default memo(Input)
